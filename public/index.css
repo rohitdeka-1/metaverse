@@ -1,33 +1,37 @@
+
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 html, body {
     height: 100%; 
-    overflow: auto; 
+    overflow-x: hidden; 
 }
 
+
 body {
-    font-family: Zen Dots;
+    font-family: 'Zen Dots', sans-serif;
 }
 
 .container {
+    width: 100%;
     height: 100vh; 
-    overflow: auto;
-    overflow-y: scroll; 
+    overflow-y: auto; 
     scroll-snap-type: y mandatory; 
 }
 
 section {
+    width: 100%;
     height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;
+    scroll-snap-align: start; 
     position: relative;
-    z-index: 2; 
-    scroll-snap-align: start;
 }
+
 
 .screen2 {
     background-color: red;
@@ -38,14 +42,16 @@ section {
 }
 
 .screen4 {
-    background-color: green; 
+    background-color: green;
 }
 
-.head{
+
+.head {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 
 .background-video {
     position: fixed;
@@ -54,18 +60,17 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 1; 
+    z-index: -1; 
 }
 
 .content {
     position: relative;
-    z-index: 1;
     color: white;
     text-align: center;
-    margin-top: 20%;
-    margin-bottom: 20%;
+    margin: 10% 0;
 }
 
+/* Heading */
 .heading {
     font-size: 4.5rem;
     font-weight: bold;
@@ -76,59 +81,55 @@ section {
                  0 0 20px #ff00ff;
 }
 
+
 svg {
     position: absolute;
-    z-index: 1;
-    width: 30px;
-    height: 20px;
-    top: 95%;
+    height: 40px;
+    width: 20px;
+    bottom: 5%; 
     left: 50%;
-    margin-top: -21px;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
     animation: svgAnimation 2s ease-in-out infinite;
 }
 
 @keyframes svgAnimation {
     0%, 100% {
-        transform: translate(-50%, -50%) translateY(0);
+        transform: translateX(-50%) translateY(0);
     }
-
     50% {
-        transform: translate(-50%, -50%) translateY(-20px);
+        transform: translateX(-50%) translateY(-20px);
     }
 }
 
 
 @media (max-width: 768px) {
     .heading {
-        font-size: 1.9rem; 
+        font-size: 2rem;
     }
 
     .content {
-        margin-top: 10%;
-        margin-bottom: 10%; 
+        margin: 5% 0;
     }
 
     svg {
-        margin-top: -37px;
-        width: 30px;
-        height: 20px; 
+        width: 25px;
+        height: 18px;
+        bottom: 8%; 
     }
 
     .head h1 {
-        font-size: 2rem; 
-        text-align: center; 
+        font-size: 1.8rem;
+        text-align: center;
     }
 
     .head p {
-        font-size: 1rem; 
-        text-align: center; 
-        padding: 0 10px; 
+        font-size: 1rem;
+        text-align: center;
+        padding: 0 10px;
     }
 
     .cta-button {
-        font-size: 1rem; 
-        padding: 10px 20px; 
+        font-size: 1rem;
+        padding: 10px 20px;
     }
-
 }
