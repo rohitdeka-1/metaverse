@@ -4,8 +4,8 @@
 }
 
 html, body {
-    height: 100%; /* Ensure both html and body take full viewport height */
-    overflow: hidden; /* Prevent unwanted scrollbars on the whole page */
+    height: 100%; 
+    overflow: auto; 
 }
 
 body {
@@ -13,19 +13,20 @@ body {
 }
 
 .container {
-    height: 100vh; /* Full viewport height for the container */
-    overflow-y: scroll; /* Enable vertical scrolling */
-    scroll-snap-type: y mandatory; /* Enable scroll snap behavior */
+    height: 100vh; 
+    overflow: auto;
+    overflow-y: scroll; 
+    scroll-snap-type: y mandatory; 
 }
 
 section {
-    height: 100vh; /* Ensure each section takes up the full height of the viewport */
+    height: 100vh; 
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    z-index: 2; /* Ensure sections are above the video */
-    scroll-snap-align: start; /* Align sections when scrolling */
+    z-index: 2; 
+    scroll-snap-align: start;
 }
 
 .screen2 {
@@ -37,13 +38,12 @@ section {
 }
 
 .screen4 {
-    background-color: green; /* Changed to green for clarity */
+    background-color: green; 
 }
 
 .head{
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
 }
 
@@ -54,7 +54,7 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: 1; /* Ensure video is behind sections */
+    z-index: 1; 
 }
 
 .content {
@@ -67,7 +67,7 @@ section {
 }
 
 .heading {
-    font-size: 5rem;
+    font-size: 4.5rem;
     font-weight: bold;
     text-shadow: 0 0 3px #ffffff,
                  0 0 6px #ffffff,
@@ -79,10 +79,11 @@ section {
 svg {
     position: absolute;
     z-index: 1;
-    width: 50px;
-    height: 30px;
+    width: 30px;
+    height: 20px;
     top: 95%;
     left: 50%;
+    margin-top: -21px;
     transform: translate(-50%, -50%);
     animation: svgAnimation 2s ease-in-out infinite;
 }
@@ -109,10 +110,11 @@ svg {
     }
 
     svg {
-        margin-bottom: 5%;
+        margin-top: -37px;
         width: 30px;
         height: 20px; 
     }
+
     .head h1 {
         font-size: 2rem; 
         text-align: center; 
