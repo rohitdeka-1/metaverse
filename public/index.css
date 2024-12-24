@@ -1,0 +1,98 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%; /* Ensure both html and body take full viewport height */
+    overflow: hidden; /* Prevent unwanted scrollbars on the whole page */
+}
+
+body {
+    font-family: Zen Dots;
+}
+
+.container {
+    height: 100vh; /* Full viewport height for the container */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    scroll-snap-type: y mandatory; /* Enable scroll snap behavior */
+}
+
+section {
+    height: 100vh; /* Ensure each section takes up the full height of the viewport */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 2; /* Ensure sections are above the video */
+    scroll-snap-align: start; /* Align sections when scrolling */
+}
+
+.screen2 {
+    background-color: red;
+}
+
+.screen3 {
+    background-color: rgb(232, 3, 148);
+}
+
+.screen4 {
+    background-color: green; /* Changed to green for clarity */
+}
+
+.head{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1; /* Ensure video is behind sections */
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    margin-top: 20%;
+    margin-bottom: 20%;
+}
+
+.heading {
+    font-size: 5rem;
+    font-weight: bold;
+    text-shadow: 0 0 3px #ffffff,
+                 0 0 6px #ffffff,
+                 0 0 10px #000000,
+                 0 0 15px #0000a9,
+                 0 0 20px #ff00ff;
+}
+
+svg {
+    position: absolute;
+    z-index: 1;
+    width: 50px;
+    height: 30px;
+    top: 95%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: svgAnimation 2s ease-in-out infinite;
+}
+
+@keyframes svgAnimation {
+    0%, 100% {
+        transform: translate(-50%, -50%) translateY(0);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) translateY(-20px);
+    }
+}
