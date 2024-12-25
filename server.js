@@ -12,12 +12,12 @@ app.get('/', (req, res) => {
 });
 
 
-app.get('/landing-page', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'landing.html')); 
-});
+// app.get('/landing-page', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public', 'landing.html')); 
+// });
 
 
-// Start the server
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
