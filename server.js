@@ -7,13 +7,16 @@ dotenv.config();
 const app = express();
 const PORT = 3000;
 
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: true })); 
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 const db = mysql.createConnection({
-    host: process.env.DB_HOST, // Use DB_HOST from the .env file
-    user: process.env.DB_USERNAME, // Use DB_USERNAME from the .env file
-    password: process.env.DB_PASSWORD, // Use DB_PASSWORD from the .env file
-    database: process.env.DB_DATABASE, // Use DB_DATABASE from the .env file
+    host: process.env.DB_HOST, 
+    user: process.env.DB_USERNAME, 
+    password: process.env.DB_PASSWORD, 
+    database: process.env.DB_DATABASE, 
 });
 
 db.connect((err) => {
@@ -23,6 +26,15 @@ db.connect((err) => {
     }
     console.log('Connected to the database');
 });
+
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html')); 
+});
+
+
+app.get('/saved',(req,res)=>{
+    res.sendFile(path.join(__dirname,'public','Saved.html'));
+})
 
 app.post('/submit', (req, res) => {
     const { email, name, reg } = req.body;
@@ -38,15 +50,12 @@ app.post('/submit', (req, res) => {
             return res.status(500).send('Error inserting data');
         }
 
-        res.send('Data submitted successfully!');
+        res.redirect('/saved');
     });
 });
 
 
 
-app.get('/', (req, res) => {
-    res.sendFile(path.join(__dirname, 'public', 'index.html')); 
-});
 
 
 app.listen(PORT, () => {
