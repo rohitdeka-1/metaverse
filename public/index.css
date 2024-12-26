@@ -47,7 +47,7 @@ section {
 }
 
 .screen3 {
-    background-color: rgb(232, 3, 148);
+    background-color: rgb(232, 3, 148); 
 }
 
 .cards {
@@ -96,6 +96,7 @@ section {
 }
 
 
+
 /* From Uiverse.io by SouravBandyopadhyay */ 
 .card-title {
     color: #ffffff;
@@ -133,7 +134,7 @@ section {
   .card {
     display: block;
     position: relative;
-    max-width: 300px;
+    max-width: 310px;
     max-height: 320px;
     background-color: #000000;
     border-radius: 10px;
@@ -144,6 +145,7 @@ section {
     overflow: hidden;
     background: #183153;
     font-family: Arial, Helvetica, sans-serif;
+    color: #c7c7c7;
   }
   
   .card:before {
@@ -178,7 +180,7 @@ section {
 
   
   #form-container {
-    position: absolute;
+    position: fixed;
     top: 10%;
     left: 50%;
     transform: translateX(-50%);
@@ -229,9 +231,13 @@ form button {
     color: rgb(137, 0, 187);
 }
 
-.cross{
-    animation: none ;
-}
+.cross {
+    align-self: center; /* Center it horizontally */
+    margin-top: 20px; /* Spacing after the submit button */
+    font-size: 1.2rem;
+    cursor: pointer;
+    animation: none;
+}   
 
 .background-video {
     position: fixed;
@@ -364,8 +370,35 @@ button {
       transform: scale(1);
     }
   }
-  
+  @media (max-width: 1024px) {
+    #form-container {
+        width: 70%; /* Narrower for tablets */
+        height: auto; /* Adapts to content */
+        padding: 30px;
+        top: 20%; /* Adjust vertical position */
+    }
 
+    form h2 {
+        font-size: 1.8rem; /* Slightly smaller */
+    }
+
+    form label {
+        font-size: 1rem; /* Adapted label font size */
+    }
+
+    form input {
+        font-size: 0.9rem;
+    }
+
+    form button {
+        font-size: 1rem;
+    }
+
+    .cross {
+        font-size: 1rem; /* Adjusted for smaller screens */
+        margin-top: 20px;
+    }
+}
 
 @media (max-width: 768px) {
     .heading {
@@ -394,27 +427,115 @@ button {
     }
 
     #form-container {
-        height: 60%;
-        width: 80%; 
-        padding: 20px; 
-        top: 20%;
+        width: 85%;
+        height: 29rem; /* Flexible height */
+        padding: 25px;
+        top: 15%; /* Centered vertically */
     }
 
     form h2 {
-        font-size: 1.5rem; 
+        font-size: 1.5rem;
     }
 
     form label {
-        font-size: 1rem; 
+        font-size: 0.9rem;
     }
 
     form input {
-        font-size: 0.9rem;  
+        font-size: 0.85rem;
     }
 
     form button {
+        font-size: 0.9rem;
+    }
+
+    .cross {
+        font-size: 0.9rem;
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .heading {
+        font-size: 1.5rem;
+    }
+
+    .content {
+        margin: 5% 0;
+    }
+
+    svg {
+        width: 20px;
+        height: 15px;
+        bottom: 8%;
+    }
+
+    .head h1 {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .head p {
+        font-size: 0.8rem;
+        text-align: center;
+        padding: 0 5px;
+    }
+
+    #form-container {
+        width: 90%;
+        height: 29.0rem;
+        padding: 20px;
+        top: 10%; /* Higher for better visibility */
+    }
+
+    form h2 {
+        font-size: 1.2rem;
+    }
+
+    form label {
+        font-size: 0.8rem;
+    }
+
+    form input {
+        font-size: 0.75rem;
+    }
+
+    form button {
+        font-size: 0.85rem;
+    }
+
+    .cross {
+        font-size: 0.85rem;
+        margin-top: 10px; /* Adjust spacing for smaller screens */
+    }
+}
+
+@media (max-width: 320px) {
+    #form-container {
+        width: 95%;
+        padding: 15px;
+        top: 5%; /* Ensures visibility on very small screens */
+    }
+
+    form h2 {
         font-size: 1rem;
     }
-    
 
+    form label {
+        font-size: 0.7rem;
+    }
+
+    form input {
+        font-size: 0.7rem;
+    }
+
+    form button {
+        font-size: 0.75rem;
+    }
+
+    .cross {
+        font-size: 0.8rem;
+        margin-top: 8px;
+    }
 }
