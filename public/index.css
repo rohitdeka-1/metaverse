@@ -1,8 +1,15 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 html, body {
@@ -16,11 +23,11 @@ body {
     font-family: 'Zen Dots', sans-serif;
 }
 
-
 .container {
     width: 100%;
     height: 100vh; 
     overflow-y: auto; 
+    overflow-x: hidden;
     scroll-snap-type: y mandatory; 
 }
 
@@ -43,25 +50,188 @@ section {
     background-color: rgb(232, 3, 148);
 }
 
+.cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 2rem;
+}
+
+
+
 .screen4 {
     background-color: rgb(64, 65, 64);
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
+    z-index: 0;
 }
 
 .head3{
     color: white;
+    display: flex;
+    justify-content: center;
 }
 
-
-.head {
+.contact{
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
+    position: relative;
+    
 }
 
+.ready {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 4.0rem;
+}
+
+.join{
+    margin-top: 1.3rem;
+}
+
+
+/* From Uiverse.io by SouravBandyopadhyay */ 
+.card-title {
+    color: #ffffff;
+    font-size: 1.5em;
+    line-height: normal;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+  }
+  
+  .small-desc {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: #c7c7c7;
+  }
+  
+  .small-desc {
+    font-size: 1em;
+  }
+  
+  .go-corner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    background: linear-gradient(135deg, #6293c8, #384c6c);
+    border-radius: 0 4px 0 32px;
+  }
+  
+  .card {
+    display: block;
+    position: relative;
+    max-width: 300px;
+    max-height: 320px;
+    background-color: #000000;
+    border-radius: 10px;
+    padding: 2em 1.2em;
+    margin: 12px;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+    background: #183153;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  .card:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: linear-gradient(135deg, #364a60, #384c6c);
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.35s ease-out;
+  }
+  
+  .card:hover:before {
+    transform: scale(28);
+  }
+  
+  .card:hover .small-desc {
+    transition: all 0.5s ease-out;
+    color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .card:hover .card-title {
+    transition: all 0.5s ease-out;
+    color: #ffffff;
+  }
+  
+
+  
+  #form-container {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 50%;
+    max-width: 500px;
+    height: 79.0%;
+    display: none;
+    overflow-y: auto;
+}
+
+
+form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2rem;  
+}
+
+form label {
+    display: block;
+    margin: 15px 0 5px;
+    font-size: 1.2rem; 
+}
+
+form input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;  
+}
+
+form button {
+    width: 100%;
+    padding: 12px;
+    color: rgb(250, 250, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;  
+}
+
+.form button:hover {
+    color: rgb(137, 0, 187);
+}
+
+.cross{
+    animation: none ;
+}
 
 .background-video {
     position: fixed;
@@ -70,8 +240,10 @@ section {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1; 
+    z-index: -1;
+    max-width: 100%; 
 }
+
 
 .content {
     position: relative;
@@ -120,13 +292,6 @@ svg {
     cursor: pointer; 
     z-index: 1; 
     outline: none;
-    -webkit-tap-highlight-color: transparent;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
 }
 
 .scroll-strip:focus{
@@ -149,6 +314,7 @@ button {
     overflow: hidden;
     cursor: pointer;
     border: none;
+    z-index: 0;
   }
   
   button:after {
@@ -227,5 +393,28 @@ button {
         padding: 0 10px;
     }
 
+    #form-container {
+        height: 60%;
+        width: 80%; 
+        padding: 20px; 
+        top: 20%;
+    }
+
+    form h2 {
+        font-size: 1.5rem; 
+    }
+
+    form label {
+        font-size: 1rem; 
+    }
+
+    form input {
+        font-size: 0.9rem;  
+    }
+
+    form button {
+        font-size: 1rem;
+    }
     
+
 }

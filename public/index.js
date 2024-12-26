@@ -9,7 +9,15 @@ $(document).ready(function () {
         $('#section1')[0].scrollIntoView({
             behavior: "smooth"
         })
-    })  
+    }) 
+    
+    $('button').click(function(){
+        $('#form-container').fadeIn();   
+    })
+
+    $('.cross').click(function(){
+        $('#form-container').fadeOut();
+    })
 
 });
 
