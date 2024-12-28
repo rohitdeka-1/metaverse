@@ -42,7 +42,8 @@ section {
 }
 
 
-.screen2 {
+.screen2 {  
+    color: white;
     background-color: rgb(44, 97, 196);
 }
 
@@ -232,8 +233,8 @@ form button {
 }
 
 .cross {
-    align-self: center; /* Center it horizontally */
-    margin-top: 20px; /* Spacing after the submit button */
+    align-self: center; 
+    margin-top: 20px; 
     font-size: 1.2rem;
     cursor: pointer;
     animation: none;
